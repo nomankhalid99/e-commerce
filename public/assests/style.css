@@ -1,0 +1,642 @@
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bangers&family=Playball&family=Poppins:ital,wght@0,100;0,500;0,800;1,500&family=Style+Script&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --bg-danger:rgb(249, 70, 70);
+    --bg-white:#fff;
+    --bg-light-white:#f5f5f5;
+
+    --primary-font:'Poppins', sans-serif;
+    --text-white:#fff;
+    --text-black:#121212;
+    --text-danger:rgb(249, 70, 70);
+    --text-grey:#aaa;
+    --text-dark-grey:#777;
+}
+
+body{
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.75rem;
+    background: var(--bg-white);
+    color: var(--text-black);
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Custom CSS */
+
+a,
+a:hover{
+    text-decoration: none;
+}
+
+p{
+    margin: 0;
+}
+
+.btn-danger{
+    border-color: var(--bg-danger);
+    background: var(--bg-danger);
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+}
+.btn-danger:hover{
+    color: var(--bg-danger);
+    background: transparent;
+}
+
+/* Navigation CSS */
+
+#header .fixed-top{
+    box-shadow: 0 0.125rem 0.627rem rgb(0 0 0 / 10%);
+}
+
+#header .navbar-brand{
+    font-family: 'Playball', cursive;
+    font-size: 2rem;
+    font-weight:bold;
+}
+
+#header .navbar-nav .nav-item .nav-link{
+    color: var(--text-black);
+    padding: 1rem 2rem;
+    text-align: center;
+}
+
+#header .navbar-nav .nav-item .nav-link:hover{
+    color: var(--bg-danger);
+}
+
+#header .navbar-toggler:focus{
+    box-shadow: none;
+}
+
+/* Home CSS */
+
+.home .carousel-inner img{
+    min-height: 650px;
+    position: relative;
+}
+
+.home .carousel-indicators [data-bs-target]{
+    background-color: var(--bg-danger);
+    width: 2.5rem;
+}
+
+.home .carousel-caption{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-100%, -50%);
+}
+
+.home .carousel-caption h1{
+    font-size: 6rem;
+}
+
+.home .carousel-control-next-icon,
+.home .carousel-control-prev-icon{
+    background:transparent;
+}
+
+.home .slider-icon{
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: var(--text-danger);
+}
+
+
+/* Offers CSS */
+
+.offer{
+    padding-top: 8rem;
+}
+
+.offer .offer-box .offer-img .img-1{
+    height: 630px;
+    position:center;
+    object-fit:cover;
+}
+.offer .offer-box .offer-img .img-2{
+    height: 300px;
+    position:center;
+}
+.offer .offer-overlay::before{
+    position: absolute;
+    content: ' ';
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background:rgba(0,0,0,0.4);
+}
+
+.offer .offer-box .offer-info{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transition: all 2.5ms ease-in-out;
+}
+
+.offer .offer-box .offer-info .heading-bigger{
+    font-size: 4.32rem;
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+    margin-bottom: 0;
+    color: var(--text-white);
+}
+
+.offer .offer-box .offer-info .offer-title-1{
+    font-size: 1.124rem;
+    font-weight: 300;
+    letter-spacing: 2px;
+    margin-bottom: 0;
+    color: var(--text-white);
+}
+
+.offer .offer-box .offer-info .btn-outline-danger{
+    color: var(--text-white);
+    border-color: var(--bg-white);
+    transition: all 0.3s ease-in-out;
+}
+
+.offer .offer-box .offer-info .btn-outline-danger:hover{
+    background-color: var(--bg-danger);
+    border-color: var(--bg-danger);
+}
+
+/* Product CSS */
+
+.products{
+    padding-top: 8.11rem;
+}
+
+.headline h2::before{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 0.125rem;
+    background-color: var(--bg-danger);
+    left: 50%;
+    bottom: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 0.625rem;
+}
+
+.products a{
+    text-decoration: none;
+    color: var(--text-black);
+}
+
+.product-list .product-img img{
+    height: 500px;
+    width: 100%;
+    transition: all 500ms ease-in-out;
+}
+
+.product-list .product-img .product-img-second{
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.product-list .product-img:hover .product-img-second{
+    opacity: 1;
+}
+
+.product-list .product-img .sale{
+    background: var(--bg-danger);
+    color: var(--text-white);
+    border-radius: 0.312rem;
+    font-size: 0.813rem;
+    letter-spacing: o.125rem;
+    line-height: 1.532rem;
+    padding: 0.125rem 0.821rem;
+    text-transform: uppercase;
+    position: absolute;
+    left: 1rem;
+    top: 1.178rem;
+    z-index: 99;
+}
+
+.product-list .product-name h3{
+    font-size: 1.135rem;
+    color: var(--text-black);
+    transition: all 0.3s ease 0s;
+}
+
+.product-list .product-name h3:hover{
+    color: var(--text-danger);
+}
+
+.product-list .product-name .amount{
+    color: var(--text-danger);
+    font-weight: 500;
+}
+
+.product-list .product-name .amount del{
+    color: var(--text-grey);
+}
+
+.product-list .product-name .ti-star{
+    color: var(--text-grey);
+}
+.product-list .product-name .ti-star.active{
+    color: var(--text-danger);
+}
+
+.product-list .product-name .add-to-cart{
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: all 0.3s ease 0s;
+}
+
+.product-list .product-name .add-to-cart:hover{
+    color: var(--text-danger);
+}
+
+.products .up-to-off{
+    position: relative;
+}
+
+.products .up-to-off::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+    z-index: 2; 
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.products .up-to-off img{
+    transition: 0.5s;
+    height: 200px;
+}
+
+.products .up-to-off:hover img{
+    transform: scale(1.1);
+}
+
+.products .up-to-off .off-content h2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.623rem;
+    color: var(--text-white);
+    z-index: 3;
+}
+
+/* Special CSS */
+
+.special{
+    padding: 6rem 0;
+    background: var(--bg-light-white);
+}
+
+.special .countdown-container{
+    padding: 4.353rem;
+}
+
+.special .countdown-container p{
+    color: var(--text-dark-grey);
+    font-weight: 300;
+    line-height: 1.823rem;
+}
+
+.special .countdown-container .countdown-counter{
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 1.823rem;
+}
+
+.special .countdown-container .countdown-counter li{
+    display: inline-block;
+    font-size: 0.845rem;
+    font-weight: bold;
+    text-align: center;
+    background: var(--bg-white);
+    padding: 2rem 1rem;
+    border-radius: 0.313rem;
+    width: 20%;
+    margin: 0 0.321rem;
+}
+
+.special .countdown-container .countdown-counter li span{
+    font-weight: 500;
+}
+
+.special .countdown-container .countdown-price del{
+    color: var(--text-grey);
+    font-size:1rem ;
+}
+
+.special .special-img span{
+    background: var(--bg-danger);
+    color: var(--text-white);
+    border-radius: 0.312rem;
+    font-size: 0.813rem;
+    letter-spacing: 0.125rem;
+    line-height: 1.532rem;
+    padding: 0.125rem 0.821rem;
+    text-transform: uppercase;
+    position: absolute;
+    left: 1rem;
+    top: 1.178rem;
+    z-index: 99;
+}
+
+
+/* Testimonial CSS */
+
+.testimonial{
+    padding: 7rem 0 8rem;
+}
+
+.testimonial .user-info{
+    box-shadow: 0 0 0.568rem rgba(0 0 0 / 5%);
+    background: var(--bg-white);
+    margin: auto;
+    padding: 1rem 5rem;
+    border: 0.063rem solid var(--bg-light-white);
+    border-radius: 0.625rem;
+}
+
+.testimonial .user-info img{
+    border-radius: 100%;
+    width: 5rem;
+    height: 5rem;
+    margin: 1.25rem auto;
+    object-fit: cover;
+    background-color: var(--bg-white);
+    border: 0.063rem solid var(--bg-light-white);
+}
+
+.testimonial .user-info span{
+    font-size: 1rem;
+    color: var(--text-grey);
+    text-transform: uppercase;
+    margin: 1rem 0;
+    display: block;
+}
+
+.testimonial .user-info p{
+    color: var(--text-grey);
+    font-size: 0.872rem;
+    font-weight: 300;
+}
+
+.testimonial .carousel-indicators [data-bs-target]{
+    background-color: var(--bg-danger);
+    width: 1.25rem;
+}
+
+.testimonial .carousel-indicators {
+    bottom: -3rem;
+}
+
+.testimonial .carousel-control-next-icon,
+.testimonial .carousel-control-prev-icon{
+    background:transparent;
+}
+
+.testimonial .carousel-control-prev{
+    left: -8.75rem;
+}
+
+.testimonial .carousel-control-next{
+    right: -8.75rem;
+}
+
+.testimonial .slider-icon{
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-danger);
+}
+
+/* Contact CSS */
+
+.contact{
+    padding: 4rem 0;
+    background-color: var(--bg-light-white);
+}
+
+.contact .info li p a{
+    font-size: 1rem;
+    color: var(--text-black);
+    display: inline-block;
+    margin: 0.75rem 0;
+}
+
+.contact .form-inp{
+    margin-bottom: 1.5rem;
+}
+
+.contact .form-control{
+    height: 3.75rem;
+    padding: 0.357rem 1.1875rem;
+    border: none;
+    font-size: 1rem;
+    box-shadow: 0 0.1875rem 1.25rem 0 rgb(0 0 0 / 12%);
+}
+
+.contact .textarea{
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 0.25rem;
+    border: none;
+    padding: 0.75rem 1.1875rem;
+    margin-top: 0.3125rem;
+    box-shadow: 0 0.1875rem 1.25rem 0 rgb(0 0 0 / 12%);
+}
+
+.contact .textarea:focus{
+    outline: none;
+    border: none;
+}
+
+/* Footer CSS */
+
+.copyright{
+    background: var(--bg-danger);
+}
+
+.copyright p,
+.copyright a{
+    color: var(--text-white);
+}
+
+
+
+/* Responsive CSS */
+
+/* For Desktop */
+
+@media(max-width:1030px) {
+
+    /* Offer CSS */
+
+    .offer .offer-box .offer-info .heading-bigger{
+        font-size: 2.8rem;
+    }
+    /* Special CSS */
+
+    .special .countdown-container .countdown-counter li{
+        padding: 1.5rem 1rem;
+    }
+}
+
+/* For Laptop */
+
+@media(max-width:991px){
+
+    /* Home CSS */
+
+    .home .carousel-caption h1{
+        font-size: 5rem;
+    }
+    
+    .home .carousel-caption h2{
+        font-size: 2rem;
+    }
+
+    /* Special CSS */
+
+    .special .countdown-container{
+        padding-top: 1rem;
+        padding-bottom: 4rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    /* Testimonial CSS */
+
+    .testimonial .carousel-control-prev{
+        left: -1.75rem;
+    }
+    
+    .testimonial .carousel-control-next{
+        right: -1.75rem;
+    }
+}
+/* For Ipad or Mobile */
+
+@media(max-width:767px){
+
+    /* Home CSS */
+
+    .home .carousel-inner img{
+        min-height: 450px;
+    }
+
+    .home .carousel-caption{
+        width: 100%;
+        transform: translate(-50%, -50%);
+    }
+    
+    .home .carousel-caption h1{
+        font-size: 3.5rem;
+    }
+    .home .carousel-caption h2{
+        font-size: 1.5rem;
+    }
+
+    .home .carousel-caption .btn-danger{
+        padding: 0.5rem 1.5rem;
+    }
+
+    .home .slider-icon{
+        font-size: 2rem;
+    }
+
+    /* Product CSS */
+
+    .products .up-to-off .off-content h2{
+        font-size: 0.75rem;
+    }
+
+    .products .up-to-off img{
+        height: 100px;
+    }
+
+    /* Special CSS */
+
+    .special{
+        padding: 4rem 0;
+    }
+
+    .special .countdown-container .countdown-counter li{
+        padding: 1rem;
+    }
+
+    /* Testimonail CSS */
+
+    .testimonial .user-info{
+        padding: 1rem;
+    }
+
+    .testimonial .carousel-control-prev,
+    .testimonial .carousel-control-next{
+        display: none;
+    }
+}
+
+/* For Mobile */
+
+@media(max-width:450px){
+
+    /* Home CSS */
+
+    .home .carousel-inner img{
+        min-height: 350px;
+    }
+    
+    .home .carousel-caption h1{
+        font-size: 2.5rem;
+    }
+    .home .carousel-caption h2{
+        font-size: 1rem;
+    }
+    
+    .home .carousel-caption .btn-danger{
+        padding: 0.5rem 1.2rem;
+        font-size: 0.6rem;
+    }
+
+    .home .carousel-indicators [data-bs-target]{
+        width: 1.5rem;
+    }
+
+}
